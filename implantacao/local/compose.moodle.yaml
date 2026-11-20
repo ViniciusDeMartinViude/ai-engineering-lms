@@ -1,0 +1,30 @@
+x-app: &app
+  build:
+    context: ./docker
+    target: app
+  image: ai-engineering-moodle-local:5.3.1
+  env_file: ./.secrets/moodle.env
+  environment:
+    MOODLE_URL: http://localhost:${MOODLE_PORT:-8080}
+  volumes:
+    - moodledata:/srv/moodledata
+  depends_on:
+    db:
+      condition: service_healthy
+services:
+  moodle:
+    <<: *app
+  cron:
+    <<: *app
+    user: www-data
+    command: ["sh", "-c", "while :; do php admin/cli/cron.php; sleep 60; done"]
+  web:
+    build:
+      context: ./docker
+      target: web
+    ports:
+      - "127.0.0.1:${MOODLE_PORT:-8080}:80"
+    depends_on:
+      - moodle
+volumes:
+  moodledata:
