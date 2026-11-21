@@ -1,0 +1,43 @@
+// The login panel evokes two overlapping stereo fields of view.
+.pagelayout-login #page .login-layout-left {
+    color: #fff;
+    background-color: #102747;
+    background-image:
+        radial-gradient(circle at 84% 22%, transparent 0 17%, #6de3d4 17.1% 17.4%, transparent 17.5%),
+        radial-gradient(circle at 68% 22%, transparent 0 17%, #83aeff 17.1% 17.4%, transparent 17.5%),
+        linear-gradient(90deg, rgba(134, 185, 234, .09) 1px, transparent 1px),
+        linear-gradient(rgba(134, 185, 234, .09) 1px, transparent 1px),
+        linear-gradient(145deg, #193e64, #0d213d 72%);
+    background-size: auto, auto, 32px 32px, 32px 32px, auto;
+}
+.pagelayout-login #page .login-layout-left::after { content: none; }
+.navbar.fixed-top { border-bottom: 3px solid #2376ae; }
+.navbar-brand { font-weight: 700; letter-spacing: -.025em; }
+.pagelayout-mydashboard #page-header,
+.pagelayout-mycourses #page-header,
+.pagelayout-course #page-header {
+    border-inline-start: .35rem solid #1b8c91;
+    padding-inline-start: 1rem;
+    margin-block: 1.25rem;
+}
+#page-header h1, .login-heading {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.035em;
+    line-height: 1.16;
+}
+.pagelayout-mydashboard .block.card,
+.pagelayout-mycourses .dashboard-card,
+.pagelayout-course .course-section {
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(19, 48, 81, .07);
+}
+.pagelayout-course .sectionname { font-weight: 650; }
+.btn-primary { border-radius: .55rem; font-weight: 600; }
+:focus-visible { outline-offset: 3px; }
+@media (max-width: 575px) {
+    .pagelayout-course #page-header, .pagelayout-mydashboard #page-header {
+        margin-block: .75rem;
+        padding-inline-start: .7rem;
+    }
+}
