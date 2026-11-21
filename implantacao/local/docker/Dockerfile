@@ -10,4 +10,4 @@ COPY moodle.ini /usr/local/etc/php/conf.d/99-moodle.ini
 
 FROM nginx:stable-alpine AS web
 COPY --from=app /srv/moodle/public /srv/moodle/public
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/templates/default.conf.template
