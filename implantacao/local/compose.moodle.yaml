@@ -22,8 +22,11 @@ services:
     build:
       context: ./docker
       target: web
+    environment:
+      MOODLE_PORT: "${MOODLE_PORT:-9090}"
+      NGINX_ENVSUBST_FILTER: "^MOODLE_PORT$"
     ports:
-      - "127.0.0.1:${MOODLE_PORT:-9090}:80"
+      - "127.0.0.1:${MOODLE_PORT:-9090}:${MOODLE_PORT:-9090}"
     depends_on:
       - moodle
 volumes:
