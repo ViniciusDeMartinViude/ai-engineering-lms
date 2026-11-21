@@ -105,3 +105,51 @@
     }
     :is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .page-header-headings h1 { font-size: 1.6rem; }
 }
+
+/* Local workspace navigation, separate from the course outline and block drawers. */
+.ae-rail { display: none; }
+.ae-rail, .ae-mobile-menu {
+    background: #103443;
+    color: #f5fbff;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+.ae-brand { display: flex; align-items: center; gap: .8rem; font-size: 1.14rem; line-height: 1.1; padding: .8rem .5rem 1.8rem; }
+.ae-monogram { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid #72ccc1; border-radius: .65rem; color: #a9f2df; font-weight: 750; }
+.ae-rail nav p, .ae-mobile-menu nav p { color: #a2c8ca; margin: 1.3rem .6rem .45rem; font-size: .78rem; font-weight: 650; }
+.ae-rail nav a, .ae-mobile-menu nav a { display: flex; gap: .75rem; align-items: center; padding: .65rem .8rem; margin: .15rem 0; color: #f4fcff; border-radius: .45rem; line-height: 1.35; text-decoration: none; }
+.ae-rail nav i, .ae-mobile-menu nav i { width: 1.1rem; text-align: center; }
+.ae-rail nav a:hover, .ae-mobile-menu nav a:hover { background: #234c58; }
+.ae-rail nav a[aria-current], .ae-mobile-menu nav a[aria-current] { color: #093a41; background: #c9ede3; font-weight: 700; }
+.ae-rail a:focus-visible, .ae-mobile-menu a:focus-visible { outline: 2px solid #f9cd7a; }
+.ae-mobile-menu { padding: .65rem 1rem; border-radius: .6rem; margin: .5rem 0; }
+.ae-mobile-menu summary { cursor: pointer; font-weight: 650; }
+.ae-training { margin: 1.25rem 0 1.75rem; }
+.ae-training-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .7rem; }
+.ae-training-head h2 { margin: 0; font-size: 1.3rem; }
+.ae-course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .8rem; }
+.ae-course { display: flex; gap: .85rem; align-items: center; background: var(--bs-body-bg, white); color: var(--bs-body-color, #193847); border: 1px solid var(--bs-border-color, #bbcdd2); border-radius: .8rem; padding: 1.15rem; text-decoration: none; }
+.ae-course strong { overflow-wrap: anywhere; }
+.ae-course span { margin-inline-start: auto; }
+.ae-course i { color: #128278; }
+.ae-course:hover { border-color: #128278; }
+@media screen and (min-width: 1200px) {
+    body:has(.ae-rail) { --ae-rail-width: 14rem; }
+    body:has(.ae-rail) #page-wrapper { padding-inline-start: var(--ae-rail-width); }
+    body:has(.ae-rail) .navbar.fixed-top { inset-inline-start: var(--ae-rail-width); }
+    body:has(.ae-rail) .drawer-left.show { inset-inline-start: var(--ae-rail-width); }
+    .ae-rail { display: block; position: fixed; inset-block: 0; inset-inline-start: 0; width: var(--ae-rail-width); padding: 1.2rem .9rem; overflow-y: auto; z-index: 1031; border-inline-end: 1px solid #41626b; }
+    .ae-mobile-menu { display: none; }
+}
+
+/* A quiet heading keeps attention on the workspace and its actions. */
+body:has(.ae-rail) #page-header {
+    background: var(--bs-body-bg, #fff);
+    color: var(--bs-body-color, #142e40);
+    border: 1px solid var(--bs-border-color, #d6e1e4);
+    border-inline-start: .3rem solid #138174;
+    box-shadow: none;
+}
+body:has(.ae-rail) #page-header .breadcrumb-item,
+body:has(.ae-rail) #page-header .breadcrumb-item::before { color: var(--bs-secondary-color, #506472); }
+body:has(.ae-rail) #page-header .breadcrumb-item a { color: var(--bs-link-color, #1556a2); }
+@media (max-width: 400px) { .ae-course-grid { grid-template-columns: 1fr; } }
