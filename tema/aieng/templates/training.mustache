@@ -1,0 +1,4 @@
+<section class="ae-training" aria-labelledby="ae-training-title">
+<div class="ae-training-head"><h2 id="ae-training-title">{{#str}}mytraining, theme_aieng{{/str}}</h2><a href="{{calendar}}">{{#str}}calendar, theme_aieng{{/str}} &rarr;</a></div>
+<div class="ae-course-grid">{{#courses}}<a class="ae-course" href="{{url}}"><i class="fa-solid fa-book-open" aria-hidden="true"></i><strong>{{title}}</strong><span aria-hidden="true">&rarr;</span></a>{{/courses}}
+{{^courses}}<a class="ae-course" href="{{catalog}}"><i class="fa-solid fa-compass" aria-hidden="true"></i><strong>{{#str}}catalog, theme_aieng{{/str}}</strong><span aria-hidden="true">&rarr;</span></a>{{/courses}}</div></section>
