@@ -7,6 +7,7 @@ case "${1:-ativar}" in
   ativar)
     "${dc[@]}" up -d --no-build moodle cron web
     "${cli[@]}" admin/cli/upgrade.php --non-interactive
+    "${cli[@]}" admin/cli/purge_caches.php
     "${cli[@]}" admin/cli/build_theme_css.php --themes=aieng
     "${cli[@]}" admin/cli/cfg.php --name=theme --set=aieng
     ;;
