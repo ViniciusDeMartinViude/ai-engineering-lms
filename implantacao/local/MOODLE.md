@@ -10,7 +10,7 @@ bash iniciar-moodle.sh
 
 O primeiro build baixa Moodle 5.3.1, instala extensões PHP e resolve as dependências. O script usa o projeto Compose existente, cria uma conta PostgreSQL dedicada e inicializa o volume de arquivos do Moodle. Use a mesma pasta e o mesmo COMPOSE_PROJECT_NAME do laboratório 1. Em uma segunda execução, o script verifica o marcador da instalação e preserva o banco existente.
 
-Abra http://localhost:9090 e entre com o usuário `admin`. Consulte a senha inicial somente no terminal local com `cat .secrets/moodle-admin`. Confirme que a página de administração carrega com os estilos visuais. Em Site administration → Server → Email → Outgoing mail configuration, use o teste de e-mail para enviar a aluno@example.test. Confira a mensagem em http://localhost:8025 (ou na porta configurada no primeiro laboratório).
+Abra http://localhost:9090 e entre com o usuário `admin`. Consulte a senha inicial somente no terminal local com `cat .secrets/moodle-admin`. Confirme que a página de administração carrega com os estilos visuais. Em Site administration → Server → Email → Outgoing mail configuration, use o teste de e-mail para enviar a aluno@example.test. O remetente de teste configurado é `noreply@example.test`. Em instalações anteriores que exibam `Invalid noreply-email noreply@localhost`, abra a configuração de saída, altere **No-reply address** para `noreply@example.test`, salve e repita o teste. Confira a mensagem em http://localhost:8025 (ou na porta configurada no primeiro laboratório).
 
 Para verificar a execução do cron:
 
