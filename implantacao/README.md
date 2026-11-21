@@ -4,7 +4,7 @@ Plano operacional para homologação local e publicação posterior. O piloto fu
 
 ## Primeira implantação — laboratório local
 
-Implementar a pilha em um PC Linux com Docker Engine ou Windows com Docker Desktop e WSL 2. Para o teste inicial, publicar o Nginx em `127.0.0.1:8080` e usar `http://localhost:8080` como endereço canônico do Moodle. Capturar e-mails com Mailpit e manter o PostgreSQL na rede interna do Compose. Para o ensaio com a turma, configurar um endereço estável na LAN, ajustar o endereço canônico e permitir acesso apenas pela rede do laboratório.
+Implementar a pilha em um PC Linux com Docker Engine ou Windows com Docker Desktop e WSL 2. Para o teste inicial, publicar o Nginx em `127.0.0.1:9090` e usar `http://localhost:9090` como endereço canônico do Moodle. Capturar e-mails com Mailpit e manter o PostgreSQL na rede interna do Compose. Para o ensaio com a turma, configurar um endereço estável na LAN, ajustar o endereço canônico e permitir acesso apenas pela rede do laboratório.
 
 Usar volumes nomeados para banco e moodledata. Verificar persistência após recriar os contêineres. Restaurar uma cópia em outro projeto Compose com volumes independentes. Executar uma entrega, correção e consulta de feedback antes de passar ao teste com 14 contas.
 
@@ -24,7 +24,7 @@ Estimativa para 14 competidores com banco na mesma VM, arquivos de até 100 MB n
 
 | Serviço | Configuração proposta |
 | --- | --- |
-| web | Nginx com raiz Moodle public/. Porta 8080 local para testes. HTTPS na implantação cloud |
+| web | Nginx com raiz Moodle public/. Porta 9090 local para testes. HTTPS na implantação cloud |
 | moodle | PHP 8.4 FPM, OPcache, Composer, Moodle 5.3 LTS com versão de manutenção fixada |
 | cron | Mesma imagem do Moodle, cron CLI a cada minuto e volume moodledata compartilhado |
 | db | PostgreSQL 17, rede privada e volume persistente |
