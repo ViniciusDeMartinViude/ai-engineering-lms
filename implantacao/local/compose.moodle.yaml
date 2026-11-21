@@ -8,6 +8,7 @@ x-app: &app
     MOODLE_URL: http://localhost:${MOODLE_PORT:-9090}
   volumes:
     - moodledata:/srv/moodledata
+    - ../../tema/aieng:/srv/moodle/public/theme/aieng:ro
   depends_on:
     db:
       condition: service_healthy
@@ -25,6 +26,8 @@ services:
     environment:
       MOODLE_PORT: "${MOODLE_PORT:-9090}"
       NGINX_ENVSUBST_FILTER: "^MOODLE_PORT$"
+    volumes:
+      - ../../tema/aieng:/srv/moodle/public/theme/aieng:ro
     ports:
       - "127.0.0.1:${MOODLE_PORT:-9090}:${MOODLE_PORT:-9090}"
     depends_on:
