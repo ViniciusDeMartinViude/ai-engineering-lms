@@ -13,4 +13,5 @@ $CFG->dataroot = '/srv/moodledata';
 $CFG->admin = 'admin';
 $CFG->routerconfigured = true;
 $CFG->smtphosts = 'mailpit:1025';
+$CFG->noreplyaddress = 'noreply@example.test';
 require_once(__DIR__ . '/lib/setup.php');
