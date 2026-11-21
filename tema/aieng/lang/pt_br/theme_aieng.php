@@ -14,3 +14,4 @@ $string['training'] = 'Aprendizagem';
 $string['workspace'] = 'Área de trabalho';
 $string['mytraining'] = 'Meu treinamento';
 $string['catalog'] = 'Explorar o catálogo de cursos';
+$string['pagetools'] = 'Ferramentas da página';

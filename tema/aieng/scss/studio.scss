@@ -106,7 +106,7 @@
     :is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .page-header-headings h1 { font-size: 1.6rem; }
 }
 
-/* Local workspace navigation, separate from the course outline and block drawers. */
+/* Local workspace navigation, separate from the course outline. */
 .ae-rail { display: none; }
 .ae-rail, .ae-mobile-menu {
     background: #103443;
@@ -153,14 +153,11 @@ body:has(.ae-rail) #page-header .breadcrumb-item::before { color: var(--bs-secon
 body:has(.ae-rail) #page-header .breadcrumb-item a { color: var(--bs-link-color, #1556a2); }
 @media (max-width: 400px) { .ae-course-grid { grid-template-columns: 1fr; } }
 
-/* Boost's limited-width drawers use the viewport midpoint. The workspace rail
-   changes that midpoint. Anchor drawers to the workspace edges and reserve
-   their exact widths in the main column whenever they are open. */
+/* Align the optional course index with the workspace navigation. */
 @media screen and (min-width: 992px) {
     #page-wrapper:has(.ae-rail) {
         --ae-gutter: clamp(16px, 1.5vw, 28px);
         --ae-outline-width: #{$drawer-left-width};
-        --ae-blocks-width: #{$drawer-right-width};
     }
     #page-wrapper:has(.ae-rail) #page.drawers {
         box-sizing: border-box;
@@ -169,16 +166,8 @@ body:has(.ae-rail) #page-header .breadcrumb-item a { color: var(--bs-link-color,
         margin-inline: 0;
         padding-inline: var(--ae-gutter);
     }
-    #page-wrapper:has(.ae-rail) #page.drawers.show-drawer-right {
-        margin-inline-end: var(--ae-blocks-width);
-    }
     #page-wrapper:has(.ae-rail) #page.drawers.show-drawer-left {
         margin-inline-start: var(--ae-outline-width);
-    }
-    #page-wrapper:has(.ae-rail):has(#page.drawers) #theme_boost-drawers-blocks.show {
-        inset-inline: auto 0;
-        width: var(--ae-blocks-width);
-        max-width: var(--ae-blocks-width);
     }
     #page-wrapper:has(.ae-rail):has(#page.drawers) #theme_boost-drawers-courseindex.show {
         inset-inline: var(--ae-rail-width, 0px) auto;
@@ -196,6 +185,8 @@ body:has(.ae-rail) #page-header .breadcrumb-item a { color: var(--bs-link-color,
 /* One horizontal gutter for the dashboard header, training links and blocks. */
 .pagelayout-mydashboard #page-wrapper:has(.ae-rail) #page.drawers .main-inner {
     box-sizing: border-box;
+    width: 100%;
+    max-width: none;
     min-width: 0;
     padding-inline: 0;
 }
@@ -221,3 +212,18 @@ body:has(.ae-rail) #page-header .breadcrumb-item a { color: var(--bs-link-color,
         padding-inline: 1rem;
     }
 }
+
+.ae-page-blocks {
+    margin-block: 1rem;
+    border: 1px solid var(--bs-border-color, #d6e1e4);
+    border-radius: .8rem;
+    background: var(--bs-body-bg, white);
+}
+.ae-page-blocks > summary {
+    padding: .85rem 1rem;
+    cursor: pointer;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+.ae-page-blocks-content { padding: 0 1rem 1rem; }
+.ae-page-blocks-content .block:last-of-type { margin-bottom: 0 !important; }

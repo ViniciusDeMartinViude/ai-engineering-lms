@@ -37,6 +37,16 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->has_workspace() ? $html . $this->render_from_template('theme_aieng/rail', $this->menu_context()) : $html;
     }
 
+    /** Keep the question navigator within reach before the questions themselves. */
+    public function show_blocks_before_content(): bool {
+        return in_array($this->page->pagetype, ['mod-quiz-attempt', 'mod-quiz-review', 'mod-quiz-summary'], true);
+    }
+
+    /** The dashboard starts with learning activities; other pages expose their tools immediately. */
+    public function expand_page_blocks(): bool {
+        return $this->page->pagelayout !== 'mydashboard' || $this->page->user_is_editing();
+    }
+
     public function full_header() {
         $html = parent::full_header();
         if (!$this->has_workspace()) {

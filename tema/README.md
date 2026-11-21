@@ -14,3 +14,7 @@ O Compose monta a pasta do tema em modo de leitura no PHP, cron e Nginx. A atual
 ## Portal 2.0
 
 A navegação lateral aparece nas páginas de trabalho de usuários autenticados a partir de 1200 px. Em telas menores, abra o menu do Studio acima do título. O painel apresenta até três cursos em que o usuário está matriculado e o calendário. Sem matrícula, o cartão aponta para o catálogo. Os links de gestão da barra respeitam as permissões do usuário.
+
+## Ferramentas da página (2.2)
+
+O Dashboard usa a largura disponível e reúne os blocos complementares em **Ferramentas da página**, abaixo das atividades. A seção abre com o modo de edição para permitir adicionar, mover ou configurar blocos conforme as permissões. Durante tentativas, revisões e resumos de questionários, as ferramentas aparecem abertas antes das questões. O índice de aulas continua disponível dentro do curso.

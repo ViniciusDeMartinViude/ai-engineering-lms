@@ -14,3 +14,4 @@ $string['training'] = 'Learning';
 $string['workspace'] = 'Workspace';
 $string['mytraining'] = 'My training';
 $string['catalog'] = 'Explore the course catalogue';
+$string['pagetools'] = 'Page tools';
