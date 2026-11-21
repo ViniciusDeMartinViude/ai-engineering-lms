@@ -1,7 +1,7 @@
 # AI Engineering Foundations and Competition Practice
 
-Start with a photograph and a question: how much detail can a model preserve using just four colours? You’ll use K-means to find out, then explore how the task changes when you have a target to predict. You’ll forecast electricity use, classify support messages by topic and use stereo cameras to estimate an object’s height above a conveyor.
+How would you predict a building’s electricity use, route a support message to the right team, or help a camera measure a moving object? In this course, you’ll turn questions like these into AI engineering problems. Working with tables, text and images, you’ll prepare data, choose a model and test how well it performs on examples it has never seen.
 
-Across six weeks, 12 recorded lessons combine short readings with hands-on Python exercises. You’ll learn to choose a baseline, test a model on unseen data and explain where it fails. Optional online office hours give you time to discuss your experiments with your trainer. The course ends with an individual competition-style challenge in a new domain.
+Recorded demonstrations, guided readings and hands-on Python labs give you practice comparing models, investigating errors and connecting predictions to applications. In an individual competition-style challenge, you’ll tackle an unfamiliar problem and use evidence from your experiments to explain your engineering decisions.
 
-![Two competitors compare a flower photograph with its four-colour reconstruction and a plot of clustered data.](course-cover.jpg)
+![Two students examine a forecast, a classification matrix and object detections in a street scene.](course-cover.jpg)
