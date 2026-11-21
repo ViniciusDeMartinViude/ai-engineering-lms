@@ -41,3 +41,67 @@
         padding-inline-start: .7rem;
     }
 }
+
+/* Course operations and learning spaces share the same visual identity. */
+.pagelayout-admin #page-header,
+.pagelayout-coursecategory #page-header,
+.pagelayout-course #page-header,
+.pagelayout-mydashboard #page-header,
+.pagelayout-mycourses #page-header,
+.pagelayout-frontpage #page-header {
+    color: #f4fbff;
+    background-color: #122b44;
+    background-image:
+        radial-gradient(ellipse at 96% 120%, transparent 28%, rgba(94,228,208,.44) 28.3%, transparent 28.7%),
+        radial-gradient(ellipse at 94% 100%, transparent 33%, rgba(94,228,208,.30) 33.3%, transparent 33.7%),
+        repeating-linear-gradient(90deg, transparent 0 39px, rgba(255,255,255,.04) 39px 40px),
+        linear-gradient(110deg, #102337, #154b59);
+    padding: 1.5rem 1.75rem;
+    margin-block: 1rem;
+    border: 0;
+    border-radius: 1.15rem;
+}
+#page-header h1 { color: inherit; }
+#page-header .breadcrumb { background: transparent; }
+:is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .breadcrumb-item, :is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .breadcrumb-item::before, :is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .breadcrumb-item a { color: #c3edf1; }
+:is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .breadcrumb-item a:hover { color: #fff; text-decoration: underline; }
+:is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .page-header-headings h1 { font-size: 2.15rem; line-height: 1.12; }
+#page-course-management #course-category-listings .card {
+        border: 1px solid #a9bec5;
+        border-radius: 1rem;
+        box-shadow: 0 .45rem 1.5rem rgba(13,44,61,.10);
+    }
+#page-course-management #category-listing-title, #page-course-management #course-listing-title.card-header {
+        border: 0;
+        border-radius: .95rem .95rem 0 0;
+        padding: 1rem 1.25rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #fff;
+    }
+#page-course-management #category-listing-title { background: #154d58; }
+#page-course-management #course-listing-title.card-header { background: #203e64; }
+#page-course-management .listing-actions { text-align: start; }
+#page-course-management .listing-actions .btn-secondary {
+        background: #09655f;
+        color: #fff;
+        border-color: #09655f;
+        border-radius: .55rem;
+        font-weight: 650;
+    }
+#page-course-management .listing-actions .btn-secondary:hover { background: #074c48; }
+#page-course-management .block_navigation.card, #page-course-management .block_settings.card {
+        border-radius: .85rem;
+        border-top: .25rem solid #14796e;
+    }
+#page-course-management .block_navigation .card-title, #page-course-management .block_settings .card-title {
+        font-weight: 700;
+        letter-spacing: -.02em;
+    }
+@media (max-width: 767px) {
+    :is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header {
+        padding: 1rem;
+        border-radius: .8rem;
+    }
+    :is(.pagelayout-admin,.pagelayout-coursecategory,.pagelayout-course,.pagelayout-mydashboard,.pagelayout-mycourses,.pagelayout-frontpage) #page-header .page-header-headings h1 { font-size: 1.6rem; }
+}
