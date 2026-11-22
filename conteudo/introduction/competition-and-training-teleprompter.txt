@@ -7,25 +7,27 @@ Orientation · How the competition and training work
 
 Welcome to AI Engineering Foundations and Competition Practice. I’m Vinicius, and I’ll be your trainer as you prepare for the Emirates Skills National Competition.
 
-Imagine this is your turn at the competition station. An object travels past two cameras. Your screen draws a box around it and gives it a name. A moment later, the same object appears in the next frame. Should your application record a second arrival?
+In the competition, you’ll receive a surprise dataset. Picture the moment you open it. You’ve read the brief. You understand what you need to deliver. But you’ve never worked with this particular data before. What’s the first thing you’d do?
 
-You know it’s the same object because you watched it move. Your program needs a way to reach that conclusion from the data. And when an expert asks what happened, you’ll want a record you can show them. That little gap between a prediction on a screen and a system you can trust is where much of our work begins.
+[Pause for a beat.]
 
-Let me show you what you’ll be asked to do, how we’ll practise it together, and where to go when you get stuck.
+I’d open a few examples. Before I write any code, I want to know what one example represents. Is it a whole photograph? A reading from one sensor at one moment? A conversation made up of several messages? That answer can change how I build and test the entire solution.
 
-[SHOW the public module names, or stay on camera.]
+The first part of our training will give you tools for exactly this moment. Some are tools you can run, like a Python notebook that lets you inspect an image or plot a column of numbers. Others are questions you can take into any dataset. What am I trying to find out? What information will I have when I make a prediction? What evidence would tell me that my approach works?
 
-The current 2027 competition format has eighteen working hours across three days. There are six modules. The final Test Project and official briefings will give you the precise tasks, submission requirements and equipment access times.
+[SCREEN — Show a practice example, or stay on camera.]
 
-Five modules build towards one industrial application. You begin with images of moving objects. You decide how to label them and how to set some aside for a fair test. Then you train a detector and check its mistakes. Two cameras give you different views of the same scene. You use those views to estimate where an object is and how high it sits above the conveyor.
+Let’s try one. Suppose I hand you a table of electricity readings from a school. I ask you to predict tomorrow’s electricity use. Take a second and think of a simple prediction you could make before training a model.
 
-Next, you bring those pieces together in an application that works on a live stream. Finally, you connect that application to the supplied robotic cell through its documented interface and demonstrate the result under the competition conditions. The organisers provide the equipment. Your work is to make the data, model and software work together. At the physical station, follow the expert’s briefing and use your allocated access slot.
+One answer is, “Use today’s reading as tomorrow’s prediction.” That gives you a baseline. Now test it on days that come later in the record. If you build a more complicated model, you have a fair way to tell whether the extra work helped.
 
-The sixth module is a separate AI challenge. You’ll receive its dataset, objective and evaluation requirements at the official module briefing. You’ll have to read a new problem, choose an approach, test it and deliver the requested outputs. That’s why you’ll see electricity records and support messages in this course alongside camera images. I want you to get comfortable deciding what to do when the problem looks unfamiliar.
+Now suppose I hand you the very same table and ask, “Can you find days with similar patterns of electricity use?” The data hasn’t changed. The question has. This time you might group days by their morning and afternoon readings, then inspect a few days in each group to see what they have in common.
 
-[CAMERA — pause briefly.]
+That’s why we’ll practise with tables, text and images. You’ll learn to spot missing or repeated examples, choose a sensible first approach, and test it on data you’ve kept aside where the task calls for it. You’ll also practise looking closely at a mistake. A model that misroutes a support message and a camera that counts the same object twice need different fixes. In both cases, tracing one example through your code is a good place to start.
 
-How will experts know what you achieved? Some things can be measured directly. Suppose a practice object is forty millimetres high and your application reports forty-six. You can report a six-millimetre absolute error. If the next measurement is worse, look at the two camera views and investigate why. Your measurements, settings and explanation let someone else check your reasoning. The official marking scheme tells you which evidence counts for each task.
+[CAMERA]
+
+When you open the surprise dataset, you may still be learning about the subject it comes from. That’s expected. You’ll already have practised how to read the task, explore the evidence, make a first attempt and decide what to try next. The official brief will tell you what to deliver and how your work will be assessed.
 
 When you receive a brief, I suggest reading the submission instructions before writing code. What file or demonstration does the expert need? What counts as a successful result? Get one simple version running early. Leave yourself time to test the exact files you intend to submit. We’ll rehearse that in an individual mock challenge using a fresh practice problem.
 
