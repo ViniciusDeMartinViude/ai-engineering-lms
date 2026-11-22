@@ -1,0 +1,54 @@
+WELCOME TO AI ENGINEERING
+Orientation · How the competition and training work
+
+[Recording notes. Read the paragraphs aloud. Bracketed lines are silent cues. Have the Moodle course open in student view, with a sample assignment ready. Show only practice materials.]
+
+[CAMERA]
+
+Welcome to AI Engineering Foundations and Competition Practice. I’m Vinicius, and I’ll be your trainer as you prepare for the Emirates Skills National Competition.
+
+Imagine this is your turn at the competition station. An object travels past two cameras. Your screen draws a box around it and gives it a name. A moment later, the same object appears in the next frame. Should your application record a second arrival?
+
+You know it’s the same object because you watched it move. Your program needs a way to reach that conclusion from the data. And when an expert asks what happened, you’ll want a record you can show them. That little gap between a prediction on a screen and a system you can trust is where much of our work begins.
+
+Let me show you what you’ll be asked to do, how we’ll practise it together, and where to go when you get stuck.
+
+[SHOW the public module names, or stay on camera.]
+
+The current 2027 competition format has eighteen working hours across three days. There are six modules. The final Test Project and official briefings will give you the precise tasks, submission requirements and equipment access times.
+
+Five modules build towards one industrial application. You begin with images of moving objects. You decide how to label them and how to set some aside for a fair test. Then you train a detector and check its mistakes. Two cameras give you different views of the same scene. You use those views to estimate where an object is and how high it sits above the conveyor.
+
+Next, you bring those pieces together in an application that works on a live stream. Finally, you connect that application to the supplied robotic cell through its documented interface and demonstrate the result under the competition conditions. The organisers provide the equipment. Your work is to make the data, model and software work together. At the physical station, follow the expert’s briefing and use your allocated access slot.
+
+The sixth module is a separate AI challenge. You’ll receive its dataset, objective and evaluation requirements at the official module briefing. You’ll have to read a new problem, choose an approach, test it and deliver the requested outputs. That’s why you’ll see electricity records and support messages in this course alongside camera images. I want you to get comfortable deciding what to do when the problem looks unfamiliar.
+
+[CAMERA — pause briefly.]
+
+How will experts know what you achieved? Some things can be measured directly. Suppose a practice object is forty millimetres high and your application reports forty-six. You can report a six-millimetre absolute error. If the next measurement is worse, look at the two camera views and investigate why. Your measurements, settings and explanation let someone else check your reasoning. The official marking scheme tells you which evidence counts for each task.
+
+When you receive a brief, I suggest reading the submission instructions before writing code. What file or demonstration does the expert need? What counts as a successful result? Get one simple version running early. Leave yourself time to test the exact files you intend to submit. We’ll rehearse that in an individual mock challenge using a fresh practice problem.
+
+[SCREEN — Open the Moodle course as a student. Show the first lesson, the notebook and the assignment.]
+
+Here’s how training works. Start on the lesson page. You’ll find a recorded demonstration and a short reading. When I ask you to predict a result, pause the video and write down your answer. Even a wrong prediction gives you something specific to investigate.
+
+Then open the practical exercise. In our first lab, you’ll download a Python notebook, run it and change one condition. As you work, keep the original result. If both versions are in front of you, it’s much easier to explain what changed.
+
+[SCREEN — Open the practice assignment and point to its marking criteria.]
+
+Read these criteria before you start. They tell you what to hand in and what I’ll be looking for. In one lesson that might be a notebook with a graph and a short explanation. In another, it might be a log showing how your application handled an interrupted stream. Use the format specified in that assignment.
+
+After you submit, come back here for your grade and my comments. I’ll identify one thing to work on next. For example, I might ask you to repeat a test on footage from a different recording session. Keep the first result, run the new test, and see whether your original conclusion still holds. That’s how feedback turns into practice you can use at the competition.
+
+[SCREEN — Show where students can book an office hour.]
+
+If you’re stuck, you can book an online session with me through Moodle. Choose an available slot and check the booking time in Abu Dhabi time. In the booking, tell me which lesson you’re on, what you expected and what actually happened. Bring the smallest example that shows the problem.
+
+Here’s a question we can work with straight away. “My detector counts one object twice. I’ve saved the two frames and their timestamps. Can we look at how my program decides an object is new?” That gives us a place to start, even if you have no idea yet how to fix it.
+
+[CAMERA — close, then switch to the Lesson 1.1 page.]
+
+Your first step is simple. Open Lesson One, “How machines learn,” and look at the photograph in the notebook. Before you run the experiment, choose one detail you think will disappear if the model can use only two colours. Write down your prediction.
+
+When we meet in that lesson, you’ll already have a question of your own for the model to answer. See you there.
