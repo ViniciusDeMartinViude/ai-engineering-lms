@@ -1,0 +1,126 @@
+HOW MACHINES LEARN
+Lesson 1.1 · Grouping colours with K-means
+
+[Recording copy. Read the short paragraphs aloud. Bracketed lines are silent cues. Have the course notebook open with its outputs cleared and a blank drawing surface ready. Allow time for the demonstrations and learner pauses.]
+
+[CAMERA]
+
+Welcome to AI Engineering Foundations and Competition Practice. I’m Vinicius.
+
+Imagine you’re judging a competition. A student shows you a photograph of a flower. Next to it is a picture made with just four colours. You can still see the flower. The student says, “My model learned to recognise it.”
+
+What would you ask them to show you before you awarded that point?
+
+Keep that question in mind. By the end of this lesson, you’ll have run that experiment yourself. And you’ll be able to say exactly what the model learned.
+
+[SCREEN — Run the first code cell. Show the original photograph.]
+
+Take a look at this picture. Pick a small detail you can point to. Perhaps it’s a narrow edge where a petal meets the background, or a patch where the light fades into shadow.
+
+Suppose I give you just two colours to redraw the entire photograph. Which detail do you think you’ll lose first? Write down your prediction. We’ll come back to it.
+
+[Pause while learners choose a detail.]
+
+Let’s begin with something we could program ourselves. Suppose I want to find leaves. I might say, “Leaves are often green. Let’s highlight every pixel whose green value is higher than both its red and its blue values.”
+
+[SCREEN — Run “Start with a rule you can inspect”. Point to a white area and then return briefly to the same area in the photograph.]
+
+The white pixels passed my test. Pick a white patch and look back at the original. Would you be comfortable telling a judge that every pixel in that patch belongs to a leaf? Imagine putting a green card next to the flower. What would the rule do to the card?
+
+I wrote that rule before the program saw the photograph. You could reproduce its decision with three numbers and two comparisons. In a moment, we’ll give the computer a different job. We’ll choose how many colours it may use and let it work out which colours fit this particular image.
+
+[SCREEN — Point to the image shape and the first pixel printed by the first cell.]
+
+To understand how it can do that, we need to see what goes into the model. Look at the first pixel printed above the photograph. Those three numbers measure red, green and blue intensity. Together, they describe one observation. Each measurement is a feature.
+
+Picture a spreadsheet. The first pixel fills the first row. Red, green and blue are the three column headings. The next pixel fills the next row. The line that contains the word “reshape” builds that table for us.
+
+Notice something missing from the columns. We haven’t given the model an x or y position. Two pixels at opposite ends of the photograph can have identical rows. That one choice about our data will help explain our results later.
+
+[CAMERA — Introduce the three learning tasks.]
+
+How does this relate to AI beyond images? Think about the air conditioning in a school building in Abu Dhabi. Suppose we have records from previous days. For each day we know the outdoor temperature, the building schedule and the electricity meter reading.
+
+If I want to predict tomorrow’s electricity use, the past meter readings give me examples of the answer I’d like the model to learn to predict. Each day is one observation. The answer is a number, measured in kilowatt-hours. That’s a regression task.
+
+Now imagine a student messages the support desk. “I can sign in, but my assignment upload keeps failing.” We have earlier messages and the topic a support officer assigned to each one. The answer we want this time is a category. That’s classification.
+
+Both examples use supervised learning. During training, each example comes with a target. When a new day or a new message arrives, we want a prediction before we know the answer.
+
+Back in our photograph, nobody has identified the pixels belonging to a petal, leaf or shadow. We can still ask which colours resemble one another. Learning groups from those measurements is an example of unsupervised learning.
+
+Here’s a quick check. Suppose the school loses its meter readings. Could you still group days with similar temperatures and schedules? Take a moment.
+
+[Pause.]
+
+Yes. You still have features to compare. Could you check how many kilowatt-hours your forecast missed by on those days? For that, you’d need the actual readings. The question you can answer depends on the evidence you have.
+
+[DRAW — Write 20, 30, 200 and 220 on a number line. Mark starting centres at 10 and 180.]
+
+Let’s work through K-means by hand. “K” is the number of groups we choose. A “mean” is an average. For now, each pixel has just one measurement, its brightness. Small numbers are dark. Larger numbers are bright.
+
+Our four pixels have brightness values of twenty, thirty, two hundred and two hundred and twenty. I’m choosing two groups. To get us started, I’ll put one centre at ten and the other at one hundred and eighty.
+
+Which centre is closer to thirty? It’s twenty units away from ten and a hundred and fifty units away from one hundred and eighty. So thirty joins the first group. Before I draw the rest, assign the other three pixels yourself.
+
+[Pause. Circle 20 and 30 together, then 200 and 220 together.]
+
+Now move each centre to the average of the values assigned to it. Twenty and thirty average to twenty-five. Two hundred and two hundred and twenty average to two hundred and ten.
+
+Notice what just happened. Twenty-five wasn’t one of the pixels I gave you. It’s a value the procedure worked out from the examples. That’s something concrete we can point to when we say the model learned from data.
+
+Try assigning the four pixels again using the new centres. Does anybody move? In this little example, they all stay where they are. On a larger dataset, moving a centre can change which centre is nearest to another example, so the procedure repeats.
+
+[SCREEN — Show “Learn a palette from the data”. Point to fit, predict and the reconstruction line in turn.]
+
+In colour, every pixel has three measurements instead of one. Think of red, green and blue as directions in a space. Nearby colours become nearby points. Each centre has three coordinates, so each centre is itself a colour we can display.
+
+Follow these three lines with me. First, “fit”. Here the model learns the centres from a sample of up to five thousand pixels. Next, “predict”. For every pixel in the photograph, it returns the index of the nearest centre. Finally, we look up that centre’s colour and put it back at the pixel’s original position.
+
+That last step explains a small mystery. I told you the model never saw the position of a pixel. So how can the flower keep its shape? Our code remembers where to put the colours back. The model only chooses a colour for each row.
+
+[Run the palette cell. Leave the three results on screen.]
+
+From left to right, you’re looking at two, four and eight colours. Go back to the detail you chose at the start. Find exactly the same spot in all three pictures. With two colours, can you still tell where that detail begins and ends? At what point, if any, does it become visible again?
+
+[Point to one edge or shadow where the displayed results differ. Hold the pointer there so learners can compare.]
+
+If you chose a different detail from mine, you may prefer a different palette. For a small icon, I might care most about keeping the outline readable. To study shading, I might want several shades in a single petal. “Better” depends on what I need the output to do.
+
+Now return to our competitor’s claim. A single colour can represent pixels from two entirely different objects. And the pixels from one petal can be divided between several groups. The group number tells us which centre was closest. Giving that group the name “flower” would require evidence we haven’t collected.
+
+[SCREEN — Show “Change the light while keeping the model fixed”. Point to the saved four-centre model.]
+
+Let’s test an assumption. We’ll keep the same photograph and the same four centres, then reduce every colour channel to sixty-five per cent of its original value. We’re simulating a darker image. Nothing in the scene moves.
+
+Before I run this cell, make a prediction. If the flower stays in exactly the same place, do you expect all of its pixels to keep the same group number? Where would you look for a change?
+
+[Pause. Run the cell. Read the percentage from the output on screen.]
+
+That percentage tells us what fraction of pixels switched to a different centre. On the right, white marks a pixel that switched. Black marks a pixel that kept its original group. Choose one patch and compare it across all three views.
+
+Here’s why I kept the centres fixed. Imagine recording a race with two different finish lines. You couldn’t tell how much of the difference came from the runner. Here, if I fitted a fresh model to the dark image, the centres could move and the group numbers could be assigned in a different order. Reusing the original model lets us change one thing and interpret the result.
+
+And that percentage has a precise meaning. It measures changes in group assignment. To measure flower recognition accuracy, we’d need a definition of what counts as a correct recognition and examples with known answers. That’s what I would ask the competitor to show me.
+
+[CAMERA — Transfer the idea to an unfamiliar problem.]
+
+Let’s leave the flower behind. A facilities engineer hands you a table of building records and asks, “Which days followed similar patterns of electricity use?” What would one row represent? Pick two measurements you might use to compare those rows. Give yourself a few seconds before you answer.
+
+[Pause.]
+
+I might choose one row per day, with morning and afternoon electricity use as the two features. After grouping the days, I could look up which were holidays. Finding holidays concentrated in one group would give me a pattern worth investigating. It would still take another check to explain why those days used electricity differently.
+
+That’s the habit I want you to practise in this course. Be able to say what one example is, what the model was allowed to see, and what observation would convince you that your interpretation holds up.
+
+[SCREEN — Show “Your evidence”, then the Moodle assignment.]
+
+For your submission, start with the prediction you made before seeing the palettes. Include the results for two, four and eight colours. For each one, point to a specific detail you kept or lost. Tell me what one row represented, name its three features and explain what target labels were available.
+
+Next, report your lighting-test percentage. Pick one area of the change map and use the original picture to explain what you see there. Include one case where grouping pixels by colour could lead someone to the wrong conclusion about an object.
+
+Finally, choose a clustering problem of your own outside images. Tell me what one observation would be and name two features you would collect. I’m interested in your reasoning. A sentence about one well-chosen example tells me more than a page of screenshots without an explanation.
+
+Upload your executed notebook with the figures and answers to the Moodle assignment. A PDF containing the figures, settings and answers is also fine.
+
+Next time, we’ll start with building records and decide how to turn an engineering question into a dataset. For now, look at that four-colour flower one last time. You can explain where every colour came from, why the picture kept its shape, and how you tested what changed in the dark. That’s your first AI engineering experiment.
