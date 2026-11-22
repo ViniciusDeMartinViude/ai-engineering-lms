@@ -7,7 +7,11 @@ Orientation · How the competition and training work
 
 Welcome to AI Engineering Foundations and Competition Practice. I’m Vinicius, and I’ll be your trainer as you prepare for the Emirates Skills National Competition.
 
-In the competition, you’ll receive a surprise dataset. Picture the moment you open it. You’ve read the brief. You understand what you need to deliver. But you’ve never worked with this particular data before. What’s the first thing you’d do?
+You’ll have eighteen hours of competition time in total, spread across three days of six hours each. During that time, you’ll work on the camera-and-robot application and face a separate challenge with a surprise dataset.
+
+In the camera-and-robot application, two cameras watch objects moving on a conveyor. Your software has to recognise an object, estimate its position and height, and pass that information to the robot so it can handle the object. Imagine the camera spots the same item in three consecutive frames. How will your application know the robot should handle it just once? That’s the kind of problem we’ll practise solving.
+
+Now picture the moment you open the surprise dataset. You’ve read the brief. You understand what you need to deliver. But you’ve never worked with this particular data before. What’s the first thing you’d do?
 
 [Pause for a beat.]
 
@@ -43,9 +47,12 @@ Read these criteria before you start. They tell you what to hand in and what I�
 
 After you submit, come back here for your grade and my comments. I’ll identify one thing to work on next. For example, I might ask you to repeat a test on footage from a different recording session. Keep the first result, run the new test, and see whether your original conclusion still holds. That’s how feedback turns into practice you can use at the competition.
 
-[SCREEN — Show where students can book an office hour.]
+[SCREEN — Show the Microsoft Bookings page. Add this link to the Moodle resource “Book an office hour” and the video description before publishing. Keep the address on screen rather than reading it aloud.]
+[https://bookings.cloud.microsoft/bookwithme/user/42c43faa3cda4360a80d51ba7731238f@aths.ac.ae/meetingtype/xCup8QmIv0S8j4AjB69p6g2?anonymous&ismsaljsauthenabled&ep=mlink]
 
-If you’re stuck, you can book an online session with me through Moodle. Choose an available slot and check the booking time in Abu Dhabi time. In the booking, tell me which lesson you’re on, what you expected and what actually happened. Bring the smallest example that shows the problem.
+You can book a one-to-one online meeting with me during training. Open “Book an office hour” in Moodle, or follow the Microsoft Bookings link in the video description. Choose an available day and time, check the time zone shown on the page, enter your details and confirm your booking.
+
+You’re welcome to book a meeting to talk through an idea as well as a problem. Bring the question you’d like us to answer together. If it’s about an experiment, bring one example that shows what you expected and what actually happened.
 
 Here’s a question we can work with straight away. “My detector counts one object twice. I’ve saved the two frames and their timestamps. Can we look at how my program decides an object is new?” That gives us a place to start, even if you have no idea yet how to fix it.
 
