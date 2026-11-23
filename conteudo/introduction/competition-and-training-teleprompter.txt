@@ -1,63 +1,31 @@
-WELCOME TO AI ENGINEERING
-Orientation · How the competition and training work
+[Slide 1 | Welcome to AI Engineering]
 
-[Recording notes. Read the paragraphs aloud. Bracketed lines are silent cues. Have the Moodle course open in student view, with a sample assignment ready. Show only practice materials.]
+Hello, everyone. I’m Vinicius de Martin Viude, Chief Expert for AI Engineering at the Emirates Skills National Competition.
 
-[CAMERA]
+Congratulations on being selected to compete. I’m looking forward to seeing how each of you approaches the challenges ahead.
 
-Welcome to AI Engineering Foundations and Competition Practice. I’m Vinicius, and I’ll be your trainer as you prepare for the Emirates Skills National Competition.
+[Slide 2 | Competition format]
 
-You’ll have eighteen hours of competition time in total, spread across three days of six hours each. During that time, you’ll work on the camera-and-robot application and face a separate challenge with a surprise dataset.
+You’ll have eighteen hours of competition time, spread over three days. That’s six hours each day.
 
-In the camera-and-robot application, two cameras watch objects moving on a conveyor. Your software has to recognise an object, estimate its position and height, and pass that information to the robot so it can handle the object. Imagine the camera spots the same item in three consecutive frames. How will your application know the robot should handle it just once? That’s the kind of problem we’ll practise solving.
+You’ll work on two main problems. One brings stereo vision and robotics together. The other asks you to analyse a surprise dataset.
 
-Now picture the moment you open the surprise dataset. You’ve read the brief. You understand what you need to deliver. But you’ve never worked with this particular data before. What’s the first thing you’d do?
+[Slide 3 | Robot and stereo vision]
 
-[Pause for a beat.]
+For the first problem, imagine an object moving along a conveyor. Two cameras see it from slightly different angles. Your application will use those views to recognise the object and estimate its position and height.
 
-I’d open a few examples. Before I write any code, I want to know what one example represents. Is it a whole photograph? A reading from one sensor at one moment? A conversation made up of several messages? That answer can change how I build and test the entire solution.
+The robot needs those measurements to handle the object. So your challenge is to connect what the cameras see with what the robot does.
 
-The first part of our training will give you tools for exactly this moment. Some are tools you can run, like a Python notebook that lets you inspect an image or plot a column of numbers. Others are questions you can take into any dataset. What am I trying to find out? What information will I have when I make a prediction? What evidence would tell me that my approach works?
+[Slide 4 | Surprise dataset and analysis]
 
-[SCREEN — Show a practice example, or stay on camera.]
+For the second problem, you’ll receive a dataset you haven’t seen before. The competition brief will tell you what you need to find out. You’ll decide how to analyse the data and which model suits the question.
 
-Let’s try one. Suppose I hand you a table of electricity readings from a school. I ask you to predict tomorrow’s electricity use. Take a second and think of a simple prediction you could make before training a model.
+To prepare you, I’ll record lessons introducing different kinds of AI models. You’ll practise predicting a number, classifying an example and finding groups in unlabelled data. These are tools you can draw on when you open the surprise dataset and have to choose an approach for yourself.
 
-One answer is, “Use today’s reading as tomorrow’s prediction.” That gives you a baseline. Now test it on days that come later in the record. If you build a more complicated model, you have a fair way to tell whether the extra work helped.
+[Slide 5 | Training and one-to-one meetings]
 
-Now suppose I hand you the very same table and ask, “Can you find days with similar patterns of electricity use?” The data hasn’t changed. The question has. This time you might group days by their morning and afternoon readings, then inspect a few days in each group to see what they have in common.
+I’ll share each recorded lesson along with files you can download and test on your own computer. You can pause a demonstration, try it yourself and come back to any part you want to see again.
 
-That’s why we’ll practise with tables, text and images. You’ll learn to spot missing or repeated examples, choose a sensible first approach, and test it on data you’ve kept aside where the task calls for it. You’ll also practise looking closely at a mistake. A model that misroutes a support message and a camera that counts the same object twice need different fixes. In both cases, tracing one example through your code is a good place to start.
+If you’d like to discuss a question with me, scan the QR code or click the booking link on this slide. Choose an available time for a one-to-one online meeting. If a test gave you an unexpected result, bring the file along and we can look at it together.
 
-[CAMERA]
-
-When you open the surprise dataset, you may still be learning about the subject it comes from. That’s expected. You’ll already have practised how to read the task, explore the evidence, make a first attempt and decide what to try next. The official brief will tell you what to deliver and how your work will be assessed.
-
-When you receive a brief, I suggest reading the submission instructions before writing code. What file or demonstration does the expert need? What counts as a successful result? Get one simple version running early. Leave yourself time to test the exact files you intend to submit. We’ll rehearse that in an individual mock challenge using a fresh practice problem.
-
-[SCREEN — Open the Moodle course as a student. Show the first lesson, the notebook and the assignment.]
-
-Here’s how training works. Start on the lesson page. You’ll find a recorded demonstration and a short reading. When I ask you to predict a result, pause the video and write down your answer. Even a wrong prediction gives you something specific to investigate.
-
-Then open the practical exercise. In our first lab, you’ll download a Python notebook, run it and change one condition. As you work, keep the original result. If both versions are in front of you, it’s much easier to explain what changed.
-
-[SCREEN — Open the practice assignment and point to its marking criteria.]
-
-Read these criteria before you start. They tell you what to hand in and what I’ll be looking for. In one lesson that might be a notebook with a graph and a short explanation. In another, it might be a log showing how your application handled an interrupted stream. Use the format specified in that assignment.
-
-After you submit, come back here for your grade and my comments. I’ll identify one thing to work on next. For example, I might ask you to repeat a test on footage from a different recording session. Keep the first result, run the new test, and see whether your original conclusion still holds. That’s how feedback turns into practice you can use at the competition.
-
-[SCREEN — Show the Microsoft Bookings page. Add this link to the Moodle resource “Book an office hour” and the video description before publishing. Keep the address on screen rather than reading it aloud.]
-[https://bookings.cloud.microsoft/bookwithme/user/42c43faa3cda4360a80d51ba7731238f@aths.ac.ae/meetingtype/xCup8QmIv0S8j4AjB69p6g2?anonymous&ismsaljsauthenabled&ep=mlink]
-
-You can book a one-to-one online meeting with me during training. Open “Book an office hour” in Moodle, or follow the Microsoft Bookings link in the video description. Choose an available day and time, check the time zone shown on the page, enter your details and confirm your booking.
-
-You’re welcome to book a meeting to talk through an idea as well as a problem. Bring the question you’d like us to answer together. If it’s about an experiment, bring one example that shows what you expected and what actually happened.
-
-Here’s a question we can work with straight away. “My detector counts one object twice. I’ve saved the two frames and their timestamps. Can we look at how my program decides an object is new?” That gives us a place to start, even if you have no idea yet how to fix it.
-
-[CAMERA — close, then switch to the Lesson 1.1 page.]
-
-Your first step is simple. Open Lesson One, “How machines learn,” and look at the photograph in the notebook. Before you run the experiment, choose one detail you think will disappear if the model can use only two colours. Write down your prediction.
-
-When we meet in that lesson, you’ll already have a question of your own for the model to answer. See you there.
+Congratulations again. I look forward to working with you.
